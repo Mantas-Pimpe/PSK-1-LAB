@@ -1,0 +1,22 @@
+.order-table{
+    border-collapse:collapse;
+}
+
+.order-table-header{
+    text-align:center;
+    background-color: #B7B7B7;
+    border-bottom:1px solid #BBBBBB;
+    padding:16px;
+}
+
+.order-table-odd-row{
+    text-align:center;
+    background-color: #E5E5E5;
+    border-top:1px solid #BBBBBB;
+}
+
+.order-table-even-row{
+    text-align:center;
+    background-color: #FFFFFF;
+    border-top:1px solid #BBBBBB;
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+<h:head>
+
+</h:head>
+
+<h:body>
+
+    <h:form>
+    <h3><h:outputText value="Dealership List:"></h:outputText></h3>
+    <h:dataTable value="#{frontPageBean.dealershipList}" var="dealership"
+                 styleClass="order-table"
+                 headerClass="order-table-header"
+                 rowClasses="order-table-odd-row,order-table-even-row">
+        <h:column>
+            <f:facet name="header">ID</f:facet>
+            <h:outputText value="#{dealership.id}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Name</f:facet>
+            <h:commandLink value="#{dealership.name}"
+                           action="#{frontPageBean.navigateToDealership(dealership)}">
+            </h:commandLink>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Location</f:facet>
+            <h:outputText value="#{dealership.location}"/>
+        </h:column>
+    </h:dataTable>
+    </h:form>
+
+    <br/>
+
+    <h:form>
+        <h3>Add Dealership</h3>
+
+        <h:outputText value="Name "></h:outputText>
+        <h:inputText value="#{frontPageBean.dealershipTmp.name}" required="true" />
+        <br />
+        <br />
+        <h:outputText value="Location "></h:outputText>
+        <h:inputText value="#{frontPageBean.dealershipTmp.location}" required="true" />
+        <br />
+        <br />
+        <h:commandButton value="Submit" action="#{frontPageBean.createDealership}" />
+    </h:form>
+
+</h:body>
+</html>
