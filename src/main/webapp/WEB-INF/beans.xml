@@ -9,4 +9,10 @@
     <interceptors>
         <class>org.uni.interceptors.MethodLogger</class>
     </interceptors>
+    <decorators>
+        <class>org.uni.beans.UpdateDealershipDecorator</class>
+    </decorators>
+    <alternatives>
+        <class>org.uni.beans.TestSalesman</class>
+    </alternatives>
 </beans>

@@ -543,4 +543,9 @@
             <remote-destination host="${jboss.mail.server.host:localhost}" port="${jboss.mail.server.port:25}"/>
         </outbound-socket-binding>
     </socket-binding-group>
+    <deployments>
+        <deployment name="MantPimp-PSK-1-Lab" runtime-name="MantPimp-PSK-1-Lab.war">
+            <fs-exploded path="C:\Users\Mantas\Desktop\6 semestras\PSK\MantPimp-PSK-1-Lab\target\MantPimp-PSK-1-Lab"/>
+        </deployment>
+    </deployments>
 </server>

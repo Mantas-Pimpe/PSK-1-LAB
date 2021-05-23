@@ -16,11 +16,35 @@
 
     <h:form>
         <h:outputText value="Name "></h:outputText>
-        <h:inputText value="#{dealershipPageBean.dealership.name}" required="true" disabled="true"/>
+        <h:inputText value="#{dealershipPageBean.dealership.name}" disabled="true" required="true"/>
         <br />
         <br />
         <h:outputText value="Location "></h:outputText>
-        <h:inputText value="#{dealershipPageBean.dealership.location}" required="true" disabled="true"/>
+        <h:inputText value="#{dealershipPageBean.dealership.location}" disabled="true" required="true"/>
+        <br />
+        <br />
+        <h3><h:outputText value="Dealership Update"></h:outputText></h3>
+        <br />
+        <h:outputText value="New Name "></h:outputText>
+        <h:inputText value="#{dealershipPageBean.dealershipTmp.name}" required="true"/>
+        <br />
+        <br />
+        <h:outputText value="New Location "></h:outputText>
+        <h:inputText value="#{dealershipPageBean.dealershipTmp.location}" required="true"/>
+        <br />
+        <br />
+        <h:commandButton value="Submit" action="#{dealershipPageBean.updateDealershipLocation}" />
+        <br />
+        <br />
+    </h:form>
+
+    <h:form>
+        <h:outputText value="Contact Message "></h:outputText>
+        <br />
+        <h:outputText value="#{dealershipPageBean.contactStatusMessage}"></h:outputText>
+        <br />
+        <br />
+        <h:commandButton value="Get Parent Dealership Message" enabled="#{dealershipPageBean.contactButtonEnabled}" action="#{dealershipPageBean.contactOtherDealerships}" />
     </h:form>
 
     <br />

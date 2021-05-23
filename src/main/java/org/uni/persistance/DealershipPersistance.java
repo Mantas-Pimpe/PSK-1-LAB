@@ -4,6 +4,7 @@ import org.uni.entities.Dealership;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped
@@ -26,5 +27,12 @@ public class DealershipPersistance {
 
     public Dealership findOne(Integer id) {
         return em.find(Dealership.class, id);
+    }
+
+    @Transactional(Transactional.TxType.REQUIRES_NEW)
+    public Dealership update(Dealership dealership) {
+        dealership = em.merge(dealership);
+        em.flush();
+        return dealership;
     }
 }

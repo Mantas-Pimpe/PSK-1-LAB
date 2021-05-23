@@ -37,4 +37,7 @@ public class Dealership implements Serializable {
 
     @OneToMany(mappedBy = "dealership", cascade = CascadeType.ALL)
     List<Sale> sales = new ArrayList<>();
+
+    @Version
+    private Integer version;
 }
